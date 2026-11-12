@@ -1,0 +1,5 @@
+failed_link=s1-s2 (Mininet virtual link only)
+source_sha256=d916e1e0212d6d8a16432611f427b74b8fef71885a34eb9be85c48f4bcff882c
+destination_sha256=d916e1e0212d6d8a16432611f427b74b8fef71885a34eb9be85c48f4bcff882c
+controller_failover=True
+PASS=True
