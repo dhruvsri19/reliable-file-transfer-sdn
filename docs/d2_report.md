@@ -1,3 +1,3 @@
 # D2 practical
 
-Run `sudo python3 scripts/demo_d2.py` in the prepared Ubuntu Mininet environment. Capture sender/receiver logs and `ovs-ofctl -O OpenFlow13 dump-flows` before and after disabling `s1-s2` or `s2-s4` during an active transfer. Record recovery time, retransmissions, and both SHA-256 values in `evidence/`. This report deliberately has no PASS claim until that run is captured.
+The verified Ubuntu run transferred 128 MiB in 9.07 s. During the same session, Mininet disabled only virtual link `s1-s2`; the controller logged backup activation and the `s1` post-failover flow sent 180,401 packets to port 3 (the `s3` branch). Sender logged one timeout/retransmission and both endpoints produced SHA-256 `d916e1e0212d6d8a16432611f427b74b8fef71885a34eb9be85c48f4bcff882c`. See `evidence/d2_result.txt` and the before/after flow dumps.
