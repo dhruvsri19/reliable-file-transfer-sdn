@@ -8,6 +8,15 @@ received_files/
 *.pcap
 *.zip
 .env
+.env.*
 *.pem
 *.key
+*.p12
+*.pfx
+id_ed25519
+id_rsa
+*_source.bin
+*_received.bin
+received_files/
+evidence/d2_source.bin
 evidence/generated/

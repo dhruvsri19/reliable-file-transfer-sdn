@@ -40,10 +40,16 @@ The demonstration creates a real 256 KiB binary file, deliberately drops sequenc
 ## D2 practical
 
 ```bash
-sudo python3 scripts/demo_d2.py
+OSKEN_PYTHON=/home/dhruv/network-monitoring-sdn/.venv/bin/python PYTHONPATH=$PWD .venv/bin/python scripts/run_d2_authorized.py
 ```
 
-In the Mininet prompt, start the receiver and sender on `h2`/`h1`, then bring down `s1-s2` while the sender runs. Inspect live flow tables with `sh ovs-ofctl -O OpenFlow13 dump-flows s1` and `s4`. The controller learns forwarding from packet-ins and installs OpenFlow rules; after a link failure, traffic must be observed on the backup branch before treating D2 as passed.
+The verified launcher transfers 128 MiB, disables only virtual Mininet link `s1-s2`, and captures controller/flow evidence. It uses the primary `s2` branch then fails over to `s3` without restarting the UDP session.
+
+## Verified results
+
+- D1: PASS — forced packet loss, retransmission, and matching SHA-256.
+- D2: PASS — a 128 MiB UDP session completed in 9.07 seconds after `s1-s2` failed; the sender logged one timeout/retransmission and both hashes were `d916e1e0212d6d8a16432611f427b74b8fef71885a34eb9be85c48f4bcff882c`.
+- Post-failover OpenFlow evidence shows `s1` forwarding 180,401 packets on port 3 (the `s3` backup branch). See `evidence/` and `PRACTICAL_CHECKLIST.md`.
 
 ## Evidence and status
 
