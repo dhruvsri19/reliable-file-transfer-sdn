@@ -1,8 +1,0 @@
-[sender] Sending d1_binary.bin (262181 bytes)
-[sender] SHA-256: aac49d86beb834c51e97ca8f314ca67bb29a18a9d9b1e3a33e5188b31dd418c7
-[sender] DEMO: simulating loss of packet 4; waiting for timeout
-[sender] Retransmitting packet 4
-[sender] Integrity check: PASS
-[sender] Total time: 0.99 seconds
-[sender] Receiver saved file at: /var/folders/c4/z85lt8nx2zs207b7h0sd1t600000gn/T/rft-d1-mfqjyj6c/received/d1_binary.bin
-D1 PRACTICAL: PASS

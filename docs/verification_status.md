@@ -1,10 +1,10 @@
-# Verification status
+# D2 verification status
 
 | Item | Status | Evidence |
 |---|---|---|
-| UDP source tree | implemented | sender/, receiver/ |
-| Local D1 practical | PASS | evidence/d1_local_run.txt |
-| Automated UDP tests | pending execution in this workspace | tests/ |
-| D2 Mininet integration | PASS on Ubuntu VM | evidence/d2_result.txt, d2_flows_*.txt |
-| Performance experiments | D1/D2 practical measurements captured; broader comparison trials pending | evidence logs |
-| GitHub publication | prepared, not pushed by user request | local Git commits |
+| Reliable UDP modules | required by D2 | sender/, receiver/ |
+| Redundant Mininet topology | PASS | topology/ |
+| OS-Ken failover controller | PASS | controller/, d2_controller.log |
+| Same-session link failover | PASS | evidence/d2_result.txt |
+| OpenFlow backup forwarding | PASS | evidence/d2_flows_after.txt |
+| SHA-256 integrity | PASS | evidence/d2_result.txt |
